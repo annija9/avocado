@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>Formas</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="CSS/mansStils.css">
+  <style>
+    body, h1, h2, h3 { font-family: "Poppins", sans-serif; }
+    body { font-size: 16px; }
+  </style>
+</head>
+<body>
+
+<!-- Navigācijas josla -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="width:260px;font-weight:bold;" id="mySidebar">
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Mans<br>Portfolio</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="index.html#teksts" class="w3-bar-item w3-button w3-hover-white">Tekstapstrāde</a>
+    <a href="index.html#atteli" class="w3-bar-item w3-button w3-hover-white">Attēlu apstrāde</a>
+    <a href="index.html#modelis" class="w3-bar-item w3-button w3-hover-white">3D modelēšana</a>
+    <a href="index.html#video" class="w3-bar-item w3-button w3-hover-white">Video</a>
+    <a href="index.html#izklajlapas" class="w3-bar-item w3-button w3-hover-white">Izklājlapas</a>
+    <a href="index.html#programmesana" class="w3-bar-item w3-button w3-hover-white">Programmēšana</a>
+    <a href="otrais.html" class="w3-bar-item w3-button w3-hover-white">Individuālā tēma</a>
+  </div>
+</nav>
+
+<div class="w3-main" style="margin-left:300px; margin-right:40px;">
+
+  <div class="w3-container" style="margin-top:40px;">
+    <h1 class="w3-jumbo"><b>Formas</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+
+  <!-- 1. forma — datums -->
+  <div class="w3-container" style="margin-top:40px;">
+    <h2 class="w3-text-red"><b>1. forma — Datums</b></h2>
+    <form>
+      <p>Šodienas datums: <input name="datums" style="padding:4px;"></p>
+      <p>
+        Ja gribi uzzināt šodienas datumu, spied pogu DATUMS
+        <input onclick="datums.value=new Date().toLocaleDateString('lv-LV');" name="poga" value="DATUMS" type="button" class="w3-button w3-red" style="margin-left:8px;">
+      </p>
+      <p>
+        Ja gribi izdzēst datuma lodziņa saturu, spied pogu RESET
+        <input value="RESET" type="reset" class="w3-button w3-gray" style="margin-left:8px;">
+      </p>
+    </form>
+  </div>
+
+  <!-- 2. forma — kalkulators -->
+  <div class="w3-container" style="margin-top:40px;">
+    <h2 class="w3-text-red"><b>2. forma — Kalkulators</b></h2>
+    <form>
+      <p>
+        1. skaitlis: <input type="number" name="sk1" id="sk1" style="padding:4px; width:120px;">
+      </p>
+      <p>
+        2. skaitlis: <input type="number" name="sk2" id="sk2" style="padding:4px; width:120px;">
+      </p>
+
+      <p>
+        <input value="+" type="button" class="w3-button w3-red" style="margin-right:8px;"
+          onclick="document.getElementById('rez').value = parseFloat(document.getElementById('sk1').value) + parseFloat(document.getElementById('sk2').value);">
+        <input value="-" type="button" class="w3-button w3-red" style="margin-right:8px;"
+          onclick="document.getElementById('rez').value = parseFloat(document.getElementById('sk1').value) - parseFloat(document.getElementById('sk2').value);">
+        <input value="×" type="button" class="w3-button w3-red" style="margin-right:8px;"
+          onclick="document.getElementById('rez').value = parseFloat(document.getElementById('sk1').value) * parseFloat(document.getElementById('sk2').value);">
+        <input value="÷" type="button" class="w3-button w3-red" style="margin-right:8px;"
+          onclick="
+            var s2 = parseFloat(document.getElementById('sk2').value);
+            if(s2 === 0) { document.getElementById('rez').value = 'Nevar dalīt ar 0!'; }
+            else { document.getElementById('rez').value = parseFloat(document.getElementById('sk1').value) / s2; }
+          ">
+        <input value="RESET" type="reset" class="w3-button w3-gray">
+      </p>
+
+      <hr>
+      <p>
+        Rezultāts: <input id="rez" name="rez" style="padding:4px; width:200px;" readonly>
+      </p>
+    </form>
+  </div>
+
+  <hr>
+  <p>
+    <a href="index.html">Atpakaļ uz portfolio</a> |
+    <a href="dzerdaudz.html">Dzer daudz</a> |
+    <a href="dzer.html">Dzēriena cena</a>
+  </p>
+
+</div>
+
+</body>
+</html>

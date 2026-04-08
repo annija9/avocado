@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function maksa(){
+  let dz = document.getElementsByName('drink');
+  for(i = 0; i < dz.length; i++) {
+    if(dz[i].checked)
+      document.getElementById("cena").innerHTML = "Cena: " + dz[i].value + " €";
+  }
+}
+</script>
+<p>Izvēlies dzērienu:</p>
+<form>
+  <input type="radio" id="kafija" name="drink" value="2.80">
+  <label for="kafija">Kafija</label><br>
+  <input type="radio" id="teja" name="drink" value="1.90">
+  <label for="teja">Tēja</label><br>
+  <input type="radio" id="kakao" name="drink" value="3.10">
+  <label for="kakao">Kakao</label><br>
+  <input type="radio" id="sula" name="drink" value="2.20">
+  <label for="sula">Sula</label><br><br>
+  <input type="button" id="poga" value="Jāmaksā" onclick="maksa()">
+  <span id="cena" style="margin-left:15px; font-weight:bold;"></span>
+</form>
+</body>
+</html>
